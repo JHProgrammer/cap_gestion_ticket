@@ -1,0 +1,17 @@
+POST http://localhost:4004/rest/clientService/Cliente
+Content-Type: application/json
+
+{
+  "Nombre": "Motorambar",
+  "Division": "X05",
+  "Gestor": "Marilyn",
+  "Prioridad": "3",
+  "Frecuencia": "Baja",
+  "Integracion": "CPI",
+  "BTP": "NEO",
+  "to_ClienteLider": [
+    {
+      "to_Lider_ID": "80a8049b-ed27-419d-a61c-1cf0e8d1470c"
+    }
+  ]
+}

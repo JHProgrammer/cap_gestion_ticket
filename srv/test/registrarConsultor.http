@@ -1,0 +1,11 @@
+POST http://localhost:4004/rest/consultorService/Consultor
+Content-Type: application/json
+
+[
+  {
+  "Nombre": "Guillermo Narvaez",
+  "Puesto": "Analista Full Stack"
+}, {
+  "Nombre": "Jefferson Hernández",
+  "Puesto": "Analista Full Stack"
+}]

@@ -1,0 +1,7 @@
+POST http://localhost:4004/rest/liderService/Lider
+Content-Type: application/json
+
+{
+  "Nombre": "Jefferson Hernández",
+  "Plataforma": "BTP"
+}
