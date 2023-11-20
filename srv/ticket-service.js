@@ -4,7 +4,6 @@ const utils = require('./utils/utils');
 const textBundle = require('./utils/textBundle');
 
 const { Ticket } = cds.entities('seidor.tabla');
-const { } = cds.entities('seidor.vista');
 
 module.exports = (srv) => { 
 

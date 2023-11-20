@@ -1,0 +1,19 @@
+POST http://localhost:4004/rest/ticketService/Ticket
+Content-Type: application/json
+
+{
+  "FechaRegistro": "2017-04-13T15:51:04.0000000Z",
+  "Periodo": "2017-04-13",
+  "NumTicket": "RITM2012012",
+  "PrioridadTicket": "1",
+  "to_Cliente_ID": "490860cd-27d8-4152-b468-289b4c081069",
+  "Descripcion": "No se puede ingresar al portal",
+  "Tipo": "BTP",
+  "Estado": "Pendiente",
+  "DescEstado": "Respuesta del cliente",
+  "IdEstado": 1,
+  "to_Consultor_ID": "a49414a1-db7a-4524-b43c-356294059e9e",
+  "to_Lider_ID": "80a8049b-ed27-419d-a61c-1cf0e8d1470c",
+  "HoraEstimada": 76.7,
+  "FechaEnvioEst": "2023-11-23"
+}
