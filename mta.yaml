@@ -14,8 +14,11 @@ modules:
     type: nodejs
     path: gen/srv
     parameters:
+      stack: cflinuxfs4
+      host: portalseidor-ms-gestion-ticket-dev
+      memory: 128M
+      instances: 1
       buildpack: nodejs_buildpack
-      memory: 256MB
     build-parameters:
       builder: npm
     provides:
@@ -25,6 +28,7 @@ modules:
     requires:
       - name: cap_gestion_ticket-db
       - name: cap_gestion_ticket-auth
+      - name: cap_gestion_ticket-base-srv-logs
   - name: cap_gestion_ticket-db-deployer
     type: hdb
     path: gen/db
@@ -39,8 +43,15 @@ resources:
     parameters:
       config:
         schema: CAP_GESTION_DEV
+        makeUniqueName: false
       service: hana
       service-plan: hdi-shared
+      service-name: HDI-GESTION-DEV
+  - name: cap_gestion_ticket-base-srv-logs
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: application-logs
+      service-plan: lite
   - name: cap_gestion_ticket-auth
     type: org.cloudfoundry.managed-service
     parameters:
