@@ -66,7 +66,8 @@ entity Ticket : managed {
       IdEstado        : Integer;
       to_Consultor    : Association to Consultor;
       to_Lider        : Association to Lider;
-      HoraEstimada    : Decimal(16, 2);
+      EstimacionHora  : Decimal(16, 2);
+      FechaInicio     : Timestamp;
       FechaEnvioEst   : Date;
 
 }
