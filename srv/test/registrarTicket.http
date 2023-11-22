@@ -6,14 +6,14 @@ Content-Type: application/json
   "Periodo": "2017-04-13",
   "NumTicket": "RITM2012012",
   "PrioridadTicket": "1",
-  "to_Cliente_ID": "490860cd-27d8-4152-b468-289b4c081069",
+  "to_Cliente_ID": "de0813a1-3f01-414d-a35f-73b9cd598c0b",
   "Descripcion": "No se puede ingresar al portal",
   "Tipo": "BTP",
   "Estado": "Pendiente",
   "DescEstado": "Respuesta del cliente",
   "IdEstado": 1,
-  "to_Consultor_ID": "a49414a1-db7a-4524-b43c-356294059e9e",
-  "to_Lider_ID": "80a8049b-ed27-419d-a61c-1cf0e8d1470c",
+  "to_Consultor_ID": "cbc613ca-3234-4b48-9f6d-55fbd607ee36",
+  "to_Lider_ID": "67697718-697c-4cdf-901d-329a782ce02c",
   "HoraEstimada": 76.7,
   "FechaEnvioEst": "2023-11-23"
 }

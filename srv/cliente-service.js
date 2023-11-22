@@ -6,6 +6,16 @@ const textBundle = require('./utils/textBundle');
 const { Cliente, LiderCliente } = cds.entities('seidor.tabla');
 const { } = cds.entities('seidor.vista');
 
+function returnDataGeneral(data) {
+    return {
+        oAuditResponse : {
+            code       : 1,
+            message    : 2,
+        },
+        oDataResponse  : data
+    };
+}
+
 module.exports = (srv) => {
 
     srv.before("*", (req) => {
@@ -15,8 +25,17 @@ module.exports = (srv) => {
         console.log(req.user.is('authenticated-user'));
     });
 
-    srv.before("CREATE","Cliente", async (req) =>{
-        console.log("antes de crear",req.data);
+    srv.after("READ","Cliente", async (data) =>{
+        console.log("antes de crear",data);
+        let oResponseRead = {
+            oAuditResponse : {
+                code       : 1,
+                message    : "OK",
+            },
+            oDataResponse  : data
+        };
+
+        return oResponseRead;
     });
 
     srv.on("CREATE", "Cliente", async (req) => {

@@ -1,8 +1,21 @@
 const cds = require('@sap/cds');
-const env = require('@sap/xsenv');
+const xsenv = require('@sap/xsenv');
 
+const passport = require('passport');
+const xssec = require('@sap/xssec');
+
+xsenv.loadEnv();
+
+const xsuaa = xsenv.getServices({
+    xsuaa: {
+        name: 'cap_gestion_ticket-auth'
+    }
+}).xsuaa;
+
+passport.use(new xssec.JWTStrategy(xsuaa));
 
 cds.on("bootstrap", (app)=>{
+    // app.use(passport.initialize());
     app.get("/alive", (_,res)=>{
         res.status(200).send("Server is alive");
     });

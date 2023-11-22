@@ -6,7 +6,7 @@ using { types } from './types';
 
 // @protocol: 'rest'
 @protocol: ['rest','odata-v4' ]
-service ClientService {
+service ClientService @(path: 'serviceCliente') {
     
     @cds.redirection.target: true
     entity Cliente as projection on tabla.Cliente;

@@ -1,5 +1,21 @@
 {
-  "scopes": [],
+  "xsappname": "cap_gestion_ticket-auth",
+  "tenant-mode": "dedicated",
+  "description": "security profile",
+  "scopes": [
+    {
+      "name": "uaa.user",
+      "description": "UAA"
+    }
+  ],
   "attributes": [],
-  "role-templates": []
+  "role-templates": [
+    {
+      "name": "Token_ExChange",
+      "description": "UAA",
+      "scope-references": [
+          "uaa.user"
+      ]
+    }
+  ]
 }

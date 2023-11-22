@@ -33,7 +33,7 @@
         "kind": "hana",
         "credentials": {}
       },
-      "auth": "dummy"
+      "auth": "xsuaa"
     }
   }
 }

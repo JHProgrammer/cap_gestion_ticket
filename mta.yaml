@@ -37,6 +37,7 @@ modules:
       memory: 256MB
     requires:
       - name: cap_gestion_ticket-db
+  
 resources:
   - name: cap_gestion_ticket-db
     type: com.sap.xs.hdi-container
@@ -51,6 +52,24 @@ resources:
     type: org.cloudfoundry.managed-service
     parameters:
       service: application-logs
+      service-plan: lite
+  - name: cap_gestion_ticket-destination-service
+    type: org.cloudfoundry.managed-service
+    parameters:
+      config:
+        HTML5Runtime_enabled: false
+        init_data:
+          instance:
+            destinations:
+              - Authentication: NoAuthentication
+                Name: ui5
+                ProxyType: Internet
+                Type: HTTP
+                URL: https://ui5.sap.com
+            existing_destinations_policy: update
+        version: 1.0.0
+      service: destination
+      service-name: cap_gestion_ticket-destination-service
       service-plan: lite
   - name: cap_gestion_ticket-auth
     type: org.cloudfoundry.managed-service
